@@ -16,7 +16,7 @@ public class Search extends HttpServlet {
     String product1 , color1 ,size1;
     int quantity1;
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse response)
+    protected void doGet(HttpServletRequest req, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
@@ -32,10 +32,10 @@ public class Search extends HttpServlet {
             out.println("<head><title>Search</title></head>");
             out.println("<body>");
             while (rs.next()) {
-                 product1 = (rs.getString(1));
-                 color1 =(rs.getString(2));
-                 size1 =(rs.getString(3));
-                 quantity1= (rs.getInt(4));
+                 product1 = (rs.getString(2));
+                 color1 =(rs.getString(3));
+                 size1 =(rs.getString(4));
+                 quantity1= (rs.getInt(5));
                 out.println("<p>product: " + product1 + "</p>");
                 out.println("<p>color: " + color1 + "</p>");
                 out.println("<p>size: " + size1 + "</p>");
